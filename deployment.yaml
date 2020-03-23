@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2 
+kind: Deployment 
+metadata: 
+  name: weatherApp-deployment 
+spec: 
+  selector: 
+    matchLabels: 
+      app: weatherApp 
+  replicas: 2 # tells deployment to run 2 pods matching the template 
+  template: 
+    metadata: 
+      labels: 
+        app: weatherApp
+    spec: 
+      containers: 
+      - name: weatherApp 
+        image: jack17529/weather:v1
+        ports: 
+        - containerPort: 80 
