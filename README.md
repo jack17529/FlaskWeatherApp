@@ -1,6 +1,6 @@
-# DockerizingFlaskWeatherApp
+# KubernetesFlaskWeatherApp
 
-Implemented CI/CD pipeline using Docker for Flask weather app made using Python 3.
+Deployed Flask weather app made using Python 3 on Kubernetes.
 The docker image can be found on Docker Hub - https://hub.docker.com/r/jack17529/weather
 
 ## Steps to run
