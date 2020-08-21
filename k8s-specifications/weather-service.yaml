@@ -1,0 +1,13 @@
+kind: Service 
+apiVersion: v1 
+metadata: 
+  name: weather-service 
+spec: 
+  selector: 
+    app: weather
+  ports: 
+  - protocol: TCP 
+    port: 5000
+    targetPort: 5000
+    nodePort: 31000 
+  type: NodePort
