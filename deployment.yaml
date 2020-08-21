@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
       - name: weather 
-        image: jack17529/weather:v1
+        image: jack17529/weather
         ports: 
         - containerPort: 80 
 
@@ -29,7 +29,7 @@ spec:
     app: weather
   ports: 
   - protocol: TCP 
-    port: 80 
-    targetPort: 80 
+    port: 5000
+    targetPort: 5000
     nodePort: 31000 
   type: NodePort
