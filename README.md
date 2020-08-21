@@ -15,8 +15,6 @@ example - `docker run --p 127.0.0.1:5000:5000 flaskapp:latest`
 
 ## Steps to deploy
 
-1. Make a deployment.yaml file
-2. The file has 2 parts the deployment part and the service part.
-3. Make a namespace for the app `kubectl create ns flaskapp`
-4. Deploy using `kubectl apply -f k8s-specifications -n flaskapp`
-5. Check port`31000` and the weather app would be running.
+1. Make a namespace for the app `kubectl create ns flaskapp`
+2. Deploy using `kubectl apply -f k8s-specifications -n flaskapp`
+3. Check port`31000` and the weather app would be running.
