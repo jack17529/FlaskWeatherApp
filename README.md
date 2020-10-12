@@ -1,4 +1,4 @@
-# DockerizingFlaskWeatherApp
+# FlaskWeatherApp
 
 Implemented CI/CD pipeline using Docker for Flask weather app made using Python 3.
 The docker image can be found on Docker Hub - https://hub.docker.com/r/jack17529/weather
