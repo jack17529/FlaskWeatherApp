@@ -20,3 +20,8 @@ example - `docker run -p 5000:5000 flaskapp:latest`
 3. Make a namespace for the app `kubectl create ns flaskapp`
 4. Deploy using `kubectl apply -f deployment.yaml -n flaskapp`
 5. Check port`31000` and the weather app would be running.
+
+## Setting Jenkins Pipeline
+
+Set up jenkins pipeline with 3 jobs which are triggered from github webhook. Used Jenkins master and two slave servers on AWS.
+Tested the backend on staging server then deployed it in production using Jenkins Pipeline.
