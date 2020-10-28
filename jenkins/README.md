@@ -29,7 +29,7 @@ Jobs in the pipeline.
 
 2. Executes this shell.
 ```
-sudo docker rm -f $(sudo docker ps -a -q)
+sudo docker rm -f $(sudo docker ps -a -q) || true
 sudo docker build /home/ubuntu/jenkins/workspace/Git-Job -t app
 sudo docker run -it -p 5000:5000 -d app
 ```
@@ -42,7 +42,7 @@ sudo docker run -it -p 5000:5000 -d app
 
 3. Executes this shell.
 ```
-sudo docker rm -f $(sudo docker ps -a -q)
+sudo docker rm -f $(sudo docker ps -a -q) || true
 sudo docker build /home/ubuntu/jenkins/workspace/Push-Production -t app
 sudo docker run -it -p 80:5000 -d app
 ```
