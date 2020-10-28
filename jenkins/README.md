@@ -46,3 +46,5 @@ sudo docker rm -f $(sudo docker ps -a -q) || true
 sudo docker build /home/ubuntu/jenkins/workspace/Push-Production -t app
 sudo docker run -it -p 80:5000 -d app
 ```
+
+NOTE - don't forget to change the `security groups` for the staging and production instances to access the website.
