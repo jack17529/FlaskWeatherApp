@@ -23,5 +23,6 @@ example - `docker run -p 5000:5000 flaskapp:latest`
 
 ## Setting Jenkins Pipeline
 
-Set up jenkins pipeline with 3 jobs which are triggered from github webhook. Used Jenkins master and two slave servers on AWS.
-Tested the backend on staging server then deployed it in production using Jenkins Pipeline.
+Set up jenkins pipeline with 3 jobs which are triggered from github webhook. Used Jenkins master and two slave servers on AWS.  
+Tested the backend on staging server then deployed it in production using Jenkins Pipeline.  
+Steps are present here - https://github.com/jack17529/FlaskWeatherApp/blob/master/jenkins/README.md
