@@ -1,5 +1,11 @@
 # jenkins
-Used ssh to connect master to slave nodes(staging and production) using the pem file for authentication in `global security settings`.
+
+1. Used ssh to connect master to slave nodes(staging and production) using the pem file for authentication in `global security settings`.  
+2. Remote root directory will be `/home/ubuntu/jenkins`.  
+3. Host will be the slave's public ip.  
+4. Used credentials for ssh verfication as the `.pem` file for connecting to the slave server on aws.
+5. Host Key Verification Strategy will be `Manually trusted key Verification Strategy`
+6. DON'T check mark `Require manual verification of initial connection`
 
 
 Jobs in the pipeline.  
