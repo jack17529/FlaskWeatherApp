@@ -48,3 +48,8 @@ sudo docker run -it -p 80:5000 -d app
 ```
 
 NOTE - don't forget to change the `security groups` for the staging and production instances to access the website.
+
+### Plugins Used
+
+1. Git Plugin
+2. Pipeline Plugin
