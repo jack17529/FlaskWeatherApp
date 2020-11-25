@@ -1,8 +1,8 @@
-version: '2.2'
+version: '3'
 
 services:
   tf:
-    image: hashicorp/terraform:0:13.5
+    image: hashicorp/terraform:0.13.5
     volumes:
       - .:/infra
     working_dir: /infra
