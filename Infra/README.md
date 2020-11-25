@@ -20,7 +20,8 @@ Should be able to run docker without `sudo`
 
 ## Steps Docker Compose
 
-1. `sudo docker-compose -f docker-compose.yml config` to check your docker-compose file.
+1. `docker-compose -f docker-compose.yml config` to check your docker-compose file.
+2. `docker-compose` commands should work without sudo.
 
 ## AWS
 
@@ -41,4 +42,6 @@ Should be able to run docker without `sudo`
 1. `docker-compose run --rm tf init` to initialize terraform.
 2. `docker-compose run --rm tf fmt` to format the `main.tf` file.
 3. `docker-compose run --rm tf validate` to validate the `main.tf` file.
-4. 
+4. `docker-compose run --rm tf plan` to plan.
+5. `docker-compose run --rm tf apply`
+6. `docker-compose run --rm tf destroy`
