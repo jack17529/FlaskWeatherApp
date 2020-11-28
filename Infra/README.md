@@ -45,3 +45,4 @@ Should be able to run docker without `sudo`
 4. `docker-compose run --rm tf plan` to plan.
 5. `docker-compose run --rm tf apply`
 6. `docker-compose run --rm tf destroy`
+7. In case of any unexpected errors delete the `.terraform` folder and try `init` command again.
