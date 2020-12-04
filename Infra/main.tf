@@ -1,6 +1,6 @@
 provider "aws" {
-  region  = "us-east-1"
-  version = "~> 3.17.0"
+  region     = "us-east-1"
+  version    = "~> 3.18.0"
 }
 
 resource "aws_instance" "web1" {
@@ -33,16 +33,16 @@ resource "aws_instance" "web2" {
   key_name          = "jack-HP"
 
   user_data = <<-EOF
-                #!/bin/bash
-                sudo apt-get update -y
-                sudo apt install apache2 -y
-                sudo systemctl start apache2
-                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-                sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-                sudo apt update
-                sudo apt install docker-ce
-                sudo systemctl start docker
-                EOF
+               #!/bin/bash
+               sudo apt-get update -y
+               sudo apt install apache2 -y
+               sudo systemctl start apache2
+               curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+               sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+               sudo apt update
+               sudo apt install docker-ce
+               sudo systemctl start docker
+               EOF
 
   tags = {
     Name = "staging"
