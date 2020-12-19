@@ -1,7 +1,8 @@
-# Infra
+# AWS
 
 Used Terraform with AWS to create manage infrastructure.  
-Used aws-vault for keeping credentials safe and docker-compose to hard set the version of terraform as new version of terraform gets released in every 2 weeks.
+Used aws-vault for keeping credentials safe and docker-compose to hard set the version of terraform as new version of terraform gets released in every 2 weeks.  
+Used Ansible to install the packages automatically from the terrform file.
 
 ## Prerequisites
 
@@ -39,9 +40,9 @@ Should be able to run docker without `sudo`
 ## Steps Terraform
 
 0. Use `nano ~/.aws/config` to set up `MFA` and `region`.
-1. `docker-compose run --rm tf init` to initialize terraform.
-2. `docker-compose run --rm tf fmt` to format the `main.tf` file.
-3. `docker-compose run --rm tf validate` to validate the `main.tf` file.
-4. `docker-compose run --rm tf plan` to plan.
-5. `docker-compose run --rm tf apply`
-6. `docker-compose run --rm tf destroy`
+1. `terraform init` to initialize terraform.
+2. `terraform fmt` to format the `main.tf` file.
+3. `terraform validate` to validate the `main.tf` file.
+4. `terraform plan` to plan.
+5. `terraform apply`
+6. `terraform destroy`

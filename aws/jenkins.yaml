@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  remote_user: ubuntu
+  tasks:
+  - name: Update and upgrade apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400
+
+- hosts: all
+  become: yes
+  remote_user: ubuntu
+  vars:
+    jenkins_hostname: jenkins.example.com
+    java_packages:
+      - openjdk-8-jdk
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkins
