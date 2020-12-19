@@ -57,4 +57,6 @@ def index():
     return render_template('weather.html', weather_data=weather_data)
 
 if __name__ == "__main__":
-    APP.run(host='0.0.0.0', port=5000, debug=True)
+    from waitress import serve
+    serve(APP, host="0.0.0.0", port=5000)
+    # APP.run(host='0.0.0.0', port=5000, debug=True)

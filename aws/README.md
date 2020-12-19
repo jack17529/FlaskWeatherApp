@@ -40,9 +40,19 @@ Should be able to run docker without `sudo`
 ## Steps Terraform
 
 0. Use `nano ~/.aws/config` to set up `MFA` and `region`.
+<<<<<<< HEAD:aws/README.md
 1. `terraform init` to initialize terraform.
 2. `terraform fmt` to format the `main.tf` file.
 3. `terraform validate` to validate the `main.tf` file.
 4. `terraform plan` to plan.
 5. `terraform apply`
 6. `terraform destroy`
+=======
+1. `docker-compose run --rm tf init` to initialize terraform.
+2. `docker-compose run --rm tf fmt` to format the `main.tf` file.
+3. `docker-compose run --rm tf validate` to validate the `main.tf` file.
+4. `docker-compose run --rm tf plan` to plan.
+5. `docker-compose run --rm tf apply`
+6. `docker-compose run --rm tf destroy`
+7. In case of any unexpected errors delete the `.terraform` folder and try `init` command again.
+>>>>>>> 189427a669f329d28b10041003469032847cb0c6:Infra/README.md
