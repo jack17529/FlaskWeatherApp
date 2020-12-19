@@ -21,9 +21,12 @@ example - `docker run -p 5000:5000 flaskapp:latest`
 4. Deploy using `kubectl apply -f deployment.yaml -n flaskapp`
 5. Check port`31000` and the weather app would be running.
 
-## Setting Infrastructure on AWS
+## Setting up AWS
 
-https://github.com/jack17529/FlaskWeatherApp/tree/master/Infra
+Infrastructure provisioning with Terraform and configuration management with Ansible.
+Using aws-vault for keeping secrets.
+
+https://github.com/jack17529/FlaskWeatherApp/tree/master/aws
 
 ## Setting Jenkins Pipeline
 
