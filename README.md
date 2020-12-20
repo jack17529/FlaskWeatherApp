@@ -1,7 +1,9 @@
 # FlaskWeatherApp
 
-Implemented CI/CD pipeline using Docker for Flask weather app made using Python 3.
-The docker image can be found on Docker Hub - https://hub.docker.com/r/jack17529/weather
+Developed a flask app using Python3, SQLalchemy and deployed it on Kubernetes.
+Used Jenkins servers on AWS for CI/CD pipeline.
+Provisioned the architecture on AWS using Terraform.
+Did configuratin management of Jenkins servers on AWS using Ansible.
 
 ## Steps to run
 
@@ -12,6 +14,7 @@ example - `docker build -t flaskapp:latest .`
 4. Run the Dockerfile using `docker run -d -p <port_to_be_served>:<port_the_website_works> <name of image you want to build>:<tag>`
 example - `docker run -p 5000:5000 flaskapp:latest`
 5. Go to localhost:5000
+6. The docker image can be found on Docker Hub - https://hub.docker.com/r/jack17529/weather
 
 ## Steps to deploy
 
