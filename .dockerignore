@@ -1,0 +1,8 @@
+# ignore .git and .cache folders
+.git
+.cache
+*/*.md
+/aws
+/jenkins
+/k8s-specifications
+*.md
