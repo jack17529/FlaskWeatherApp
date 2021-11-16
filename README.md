@@ -9,10 +9,10 @@ Did configuratin management of Jenkins servers on AWS using Ansible.
 
 1. Clone the git repository.
 2. cd in the repository and build the Dockerfile using `docker build -t <name of image you want to build>:<tag> .`
-example - `docker build -t flaskapp:latest .`
+(example - `docker build -t flaskapp:latest .`)
 3. Check the images present using `docker images`
 4. Run the Dockerfile using `docker run -d -p <port_to_be_served>:<port_the_website_works> <name of image you want to build>:<tag>`
-example - `docker run -p 5000:5000 flaskapp:latest`
+(example - `docker run -p 5000:5000 flaskapp:latest`)
 5. Go to localhost:5000
 6. The docker image can be found on Docker Hub - https://hub.docker.com/r/jack17529/weather
 
