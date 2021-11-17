@@ -1,14 +1,23 @@
 locals {
-  vpc_id           = "vpc-3a284440"
-  subnet_id        = "subnet-5c2d2753"
+  vpc_id           = "vpc-a0fb9bda"
+  subnet_id        = "subnet-18ed0a55"
   ssh_user         = "ubuntu"
-  key_name         = "ansible-key"
-  private_key_path = "~/Downloads/ansible-key.pem"
+  key_name         = "ubuntu-key"
+  private_key_path = "~/Downloads/ubuntu-key.pem"
 }
 
 provider "aws" {
-  region     = "us-east-1"
-  version    = "~> 3.18.0"
+  region = "us-east-1"
+}
+
+# This is used to define the required stuff should be from hashicorp and locks the version.
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.21"
+    }
+  }
 }
 
 resource "aws_security_group" "jenkins" {
@@ -118,7 +127,7 @@ resource "aws_security_group" "production" {
 
 resource "aws_instance" "jenkins" {
 
-  ami                         = "ami-0885b1f6bd170450c"
+  ami                         = "ami-083654bd07b5da81d"
   subnet_id                   = local.subnet_id
   instance_type               = "t2.micro"
   associate_public_ip_address = true
@@ -150,7 +159,7 @@ resource "aws_instance" "jenkins" {
 
 resource "aws_instance" "staging" {
 
-  ami                         = "ami-0885b1f6bd170450c"
+  ami                         = "ami-083654bd07b5da81d"
   subnet_id                   = local.subnet_id
   instance_type               = "t2.micro"
   associate_public_ip_address = true
@@ -182,7 +191,7 @@ resource "aws_instance" "staging" {
 
 resource "aws_instance" "production" {
 
-  ami                         = "ami-0885b1f6bd170450c"
+  ami                         = "ami-083654bd07b5da81d"
   subnet_id                   = local.subnet_id
   instance_type               = "t2.micro"
   associate_public_ip_address = true
