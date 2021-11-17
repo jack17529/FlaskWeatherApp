@@ -53,3 +53,4 @@ NOTE - don't forget to change the `security groups` for the staging and producti
 
 1. Git Plugin
 2. Pipeline Plugin
+3. Blue Ocean Plugin
