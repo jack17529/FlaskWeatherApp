@@ -3,19 +3,21 @@
   become: yes
   remote_user: ubuntu
   tasks:
-  - name: Update and upgrade apt packages
-    apt:
-      upgrade: yes
-      update_cache: yes
-      cache_valid_time: 86400
+  - name: Update apt repo and cache on all Debian/Ubuntu boxes
+    apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+  - name: Upgrade all packages on servers
+    apt: upgrade=dist force_apt_get=yes
 
 - hosts: all
-  become: yes
+  become: true
   remote_user: ubuntu
+  
   vars:
     jenkins_hostname: jenkins.example.com
     java_packages:
       - openjdk-8-jdk
+
   roles:
     - role: geerlingguy.java
     - role: geerlingguy.jenkins
