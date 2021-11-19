@@ -1,0 +1,72 @@
+pipeline{
+    agent any
+    stages{
+        stage("Pull code from git repo"){
+            steps{
+                git 'https://github.com/jack17529/FlaskWeatherApp.git'
+            }
+            post{
+                always{
+                    echo "========trying to clone git repo========"
+                }
+                success{
+                    echo "========cloned git repo successfully========"
+                }
+                failure{
+                    echo "========cloning git repo failed========"
+                }
+            }
+        }
+        stage("build stage"){
+            steps{
+                sh '''sudo docker build /home/ubuntu/jenkins/workspace/Git-Job -t app
+                    sudo docker run -it -p 5000:5000 -d app'''
+            }
+            post{
+                always{
+                    echo "========executing build stage========"
+                }
+                success{
+                    echo "========successfully built and run docker container========"
+                }
+                failure{
+                    echo "========building failed========"
+                }
+                cleanup{
+                    sh 'sudo docker rm -f $(sudo docker ps -a -q) || true'
+                }
+            }
+        }
+        stage("push in production"){
+            steps{
+                sh '''sudo docker build /home/ubuntu/jenkins/workspace/Push-Production -t app
+                    sudo docker run -it -p 80:5000 -d app'''
+            }
+            post{
+                always{
+                    echo "========deploying into production========"
+                }
+                success{
+                    echo "========successfully deployed in production========"
+                }
+                failure{
+                    echo "========failed in production========"
+                }
+                cleanup{
+                    sh 'sudo docker rm -f $(sudo docker ps -a -q) || true'
+                }
+            }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
