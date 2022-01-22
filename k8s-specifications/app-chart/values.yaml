@@ -1,0 +1,4 @@
+deployment:
+  image: "jack17529/weather"
+  tag: "latest"
+name: weather-app

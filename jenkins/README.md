@@ -6,7 +6,7 @@
 4. Used credentials for ssh verfication as the `.pem` file for connecting to the slave server on aws.
 5. Host Key Verification Strategy will be `Manually trusted key Verification Strategy`
 6. DON'T check mark `Require manual verification of initial connection`
-
+7. Setup the dockerhub credentials and eks credentials.
 
 Jobs in the pipeline.  
 1. Git-Job
