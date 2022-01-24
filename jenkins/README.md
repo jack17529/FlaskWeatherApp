@@ -8,10 +8,10 @@
 6. DON'T check mark `Require manual verification of initial connection`
 7. Setup the dockerhub credentials and eks credentials.
 
-Jobs in the pipeline.  
-1. Git-Job
-2. Build-Job
-3. Push-Production 
+Jobs in the pipeline.
+1. Build-Job
+2. Eamil
+3. Deploy to EKS
 
 ## Steps
 
@@ -54,3 +54,4 @@ NOTE - don't forget to change the `security groups` for the staging and producti
 1. Git Plugin
 2. Pipeline Plugin
 3. Blue Ocean Plugin
+4. Kubernetes-Deploy
