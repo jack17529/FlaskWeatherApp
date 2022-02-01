@@ -17,5 +17,5 @@ spec:
       - name: "{{ .Values.name }}" 
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
         ports: 
-        - containerPort: 80 
+        - containerPort: 5000
 
