@@ -16,5 +16,5 @@ spec:
       - name: weather 
         image: jack17529/weather
         ports: 
-        - containerPort: 80 
+        - containerPort: 5000
 
