@@ -1,4 +1,4 @@
 deployment:
-  image: "jack17529/weather"
-  tag: "latest"
+  image: "jack17529/weatherapp"
+  tag: "1"
 name: weather-app

@@ -8,3 +8,8 @@
 # Helm
 
 - `helm install app-chart app-chart` to install the chart.
+
+# Kubernetes
+
+- `kubectl create secret generic weather-secret --from-file=secret.ini --dry-run=client -o yaml > weather-secret.yaml` to create the secret manifest
+- `kubectl create cm weather-cm --from-file=config.ini --dry-run=client -o yaml > weather-cm.yaml` to create the configMap manifest.
