@@ -11,7 +11,7 @@
 1. Clone the git repo.
 2. Create a python virtual environement.
 3. Install the `requirements.txt` in the environement.
-4. Use the sample `config.ini` and `secret.ini` provided below to run the app.
+4. Use the sample `secret.ini` provided below to run the app.
 
 ```ini
 [main]

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # creationTimestamp: null
+  name: weather-cm
+data:
+  config.ini: |-
+    [main]
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = sqlite:///weather.db
+    SQLALCHEMY_TRACK_MODIFICATIONS = False

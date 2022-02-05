@@ -1,13 +1,13 @@
+# will create only 1 node cluster.
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
+
 metadata:
-  name: devops
-  region: us-west-1
+  name: cluster-1
+  region: us-east-1
   version: "1.21"
-managedNodeGroups:
-- name: primary-1-21
-  instanceType: t2.small
-  minSize: 3
-  maxSize: 6
-  # spot: true
-  
+
+nodeGroups:
+  - name: ng-1
+    instanceType: m5.large
+    desiredCapacity: 1
