@@ -15,17 +15,10 @@
 
 ```ini
 [main]
-DEBUG = True
-SQLALCHEMY_DATABASE_URI = sqlite:///weather.db
-SQLALCHEMY_TRACK_MODIFICATIONS = False
-```
-
-```ini
-[main]
 api_key = 271d1234d3f497eed5b1d80a07b3fcd1
 ```
 
-5. Run the app using `flask run` command.
+1. Run the app using `flask run` command.
 
 ## Steps to run Dockerfile
 
