@@ -14,7 +14,14 @@ spec:
     spec: 
       containers: 
       - name: weather 
-        image: jack17529/weather
+        image: jack17529/weatherapp:1
         ports: 
         - containerPort: 5000
-
+        volumeMounts:
+        - mountPath: /config/
+          # mountPropagation      <string>
+          name: config-volume
+      volumes:
+      - name: config-volume
+        configMap:
+          name: weather-cm

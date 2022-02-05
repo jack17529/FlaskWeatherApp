@@ -8,12 +8,14 @@ from flask_sqlalchemy import SQLAlchemy
 from configparser import ConfigParser
 config = ConfigParser()
 
-config.read('config.ini')
+config.read('config/config.ini')
 
 APP = Flask(__name__)
 APP.config['DEBUG'] = config.get('main', 'DEBUG')
 APP.config['SQLALCHEMY_DATABASE_URI'] = config.get('main', 'SQLALCHEMY_DATABASE_URI')
 APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config.get('main', 'SQLALCHEMY_TRACK_MODIFICATIONS')
+
+print('config loded successfully')
 
 DB = SQLAlchemy(APP)
 
@@ -41,9 +43,9 @@ def index():
 
     cities = City.query.all()
 
-    config.read('secret.ini')
+    config.read('secret/secret.ini')
     api_key=config.get('main', 'api_key')
-    # print(api_key)
+    print('secret loded successfully')
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid='+api_key
 
     weather_data = []
