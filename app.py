@@ -5,10 +5,15 @@ import requests
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
+from configparser import ConfigParser
+config = ConfigParser()
+
+config.read('config.ini')
+
 APP = Flask(__name__)
-APP.config['DEBUG'] = True
-APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///weather.db'
-APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+APP.config['DEBUG'] = config.get('main', 'DEBUG')
+APP.config['SQLALCHEMY_DATABASE_URI'] = config.get('main', 'SQLALCHEMY_DATABASE_URI')
+APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config.get('main', 'SQLALCHEMY_TRACK_MODIFICATIONS')
 
 DB = SQLAlchemy(APP)
 
@@ -36,7 +41,10 @@ def index():
 
     cities = City.query.all()
 
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=271d1234d3f497eed5b1d80a07b3fcd1'
+    config.read('secret.ini')
+    api_key=config.get('main', 'api_key')
+    # print(api_key)
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid='+api_key
 
     weather_data = []
 

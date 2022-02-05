@@ -18,4 +18,3 @@ spec:
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
         ports: 
         - containerPort: 5000
-

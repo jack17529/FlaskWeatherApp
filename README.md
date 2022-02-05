@@ -1,11 +1,33 @@
 # FlaskWeatherApp
 
-Developed a flask app using Python3, SQLalchemy and deployed it on Kubernetes.
-Used Jenkins servers on AWS for CI/CD pipeline.
-Provisioned the architecture on AWS using Terraform.
-Did configuratin management of Jenkins servers on AWS using Ansible.
+- Developed a flask app using Python3, SQLalchemy and deployed it on Kubernetes.
+- Used Jenkins servers on AWS for CI/CD pipeline.
+- Provisioned the architecture on AWS using Terraform.
+- Did configuratin management of Jenkins servers on AWS using Ansible.
+- Deployed the app on EKS cluster using helm chart.
 
-## Steps to run
+## Steps to run the flask app
+
+1. Clone the git repo.
+2. Create a python virtual environement.
+3. Install the `requirements.txt` in the environement.
+4. Use the sample `config.ini` and `secret.ini` provided below to run the app.
+
+```ini
+[main]
+DEBUG = True
+SQLALCHEMY_DATABASE_URI = sqlite:///weather.db
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+```
+
+```ini
+[main]
+api_key = 271d1234d3f497eed5b1d80a07b3fcd1
+```
+
+5. Run the app using `flask run` command.
+
+## Steps to run Dockerfile
 
 1. Clone the git repository.
 2. cd in the repository and build the Dockerfile using `docker build -t <name of image you want to build>:<tag> .`
