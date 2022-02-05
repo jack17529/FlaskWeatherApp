@@ -25,9 +25,8 @@ api_key = 271d1234d3f497eed5b1d80a07b3fcd1
 1. Clone the git repository.
 2. cd in the repository and build the Dockerfile using `docker build -t <name of image you want to build>:<tag> .`
 (example - `docker build -t weatherapp:1 .`)
-3. Check the images present using `docker images`
-4. Run the Dockerfile using `docker run -it -v <local-config-location>:<location-in-docker> -v <local-secret-location>:<location-in-docker> -p <port_to_be_served>:<port_the_website_works> <name of image you want to build>:<tag>`
-(example - `docker run -it -v ${PWD}/config:/config -v ${PWD}/secret/:/secret -p 5000:5000 weatherapp:1`)
+3. Check the images present using `docker image ls`
+4. Run the Dockerfile using `docker run -it -v <local-config-location>:<location-in-docker> -v <local-secret-location>:<location-in-docker> -p <port_to_be_served>:<port_the_website_works> <name of image you want to build>:<tag>` (example - `docker run -it -v ${PWD}/config:/config -v ${PWD}/secret/:/secret -p 5000:5000 weatherapp:1`)
 5. Go to localhost:5000
 6. The docker image can be found on Docker Hub - https://hub.docker.com/r/jack17529/weather
 
@@ -41,13 +40,12 @@ api_key = 271d1234d3f497eed5b1d80a07b3fcd1
 
 ## Setting up AWS
 
-Infrastructure provisioning with Terraform and configuration management with Ansible.
-Using aws-vault for keeping secrets.
-
-https://github.com/jack17529/FlaskWeatherApp/tree/master/aws
+- Infrastructure provisioning with Terraform and configuration management with Ansible.
+- Using aws-vault for keeping secrets.
+- Steps are present here - https://github.com/jack17529/FlaskWeatherApp/tree/aws
 
 ## Setting Jenkins Pipeline
 
-Set up jenkins pipeline with 3 jobs which are triggered from github webhook. Used Jenkins master and two slave servers on AWS.  
-Tested the backend on staging server then deployed it in production using Jenkins Pipeline.  
-Steps are present here - https://github.com/jack17529/FlaskWeatherApp/blob/master/jenkins/README.md
+- Set up jenkins pipeline with 3 jobs which are triggered from github webhook. Used Jenkins master and two slave servers on AWS.  
+- Tested the backend on staging server then deployed it in production using Jenkins Pipeline.  
+- Steps are present here - https://github.com/jack17529/FlaskWeatherApp/jenkins/README.md
